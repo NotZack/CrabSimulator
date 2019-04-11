@@ -8,8 +8,8 @@ import java.io.FileNotFoundException;
 public class AssetLoading {
 
     public static Image crabSprite;
+    public static Image shrimpSprite;
 
-    public static Image localPlayer;
     public static Image defaultWorldTile;
 
     static void init() {
@@ -21,6 +21,7 @@ public class AssetLoading {
     private static void loadPlayers() {
         try {
             crabSprite = new Image(new FileInputStream("CrabSim/src/main/resources/Players/Crab.png"),0, 0, true, false);
+            shrimpSprite = new Image(new FileInputStream("CrabSim/src/main/resources/Players/Shrimp.png"),0, 0, true, false);
         }
         catch (FileNotFoundException error) {
             error.printStackTrace();

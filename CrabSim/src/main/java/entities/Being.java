@@ -1,8 +1,9 @@
 package entities;
 
+import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 
-public abstract class Being {
+public abstract class Being extends ImageView {
 
     protected abstract Rectangle getBoundingBox();
 

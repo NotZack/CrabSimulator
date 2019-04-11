@@ -3,21 +3,20 @@ package entities.players;
 import javafx.scene.image.Image;
 import javafx.scene.shape.Rectangle;
 
-public class Crab extends Player {
+class Shrimp extends Player {
 
-    Crab(Image crabSprite) {
-        this.setImage(crabSprite);
+    Shrimp(Image shrimpSprite) {
+        this.setImage(shrimpSprite);
     }
 
     @Override
     public void init() {
-        health = 150;
+
     }
 
     @Override
     public void takeDamage(int damageAmount) {
-        vulnerable = false;
-        health -= damageAmount;
+
     }
 
     @Override
@@ -32,7 +31,7 @@ public class Crab extends Player {
 
     @Override
     protected boolean isVulnerable() {
-        return vulnerable;
+        return false;
     }
 
     @Override

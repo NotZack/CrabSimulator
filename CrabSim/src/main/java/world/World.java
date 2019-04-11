@@ -5,7 +5,7 @@ import world.regions.WorldRegion;
 
 public class World {
 
-    static WorldRegion baseWorld;
+    private static WorldRegion baseWorld;
 
     public static void init() {
         baseWorld = new WorldRegion();
