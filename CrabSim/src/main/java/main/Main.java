@@ -58,7 +58,6 @@ public class Main extends Application {
 
             @Override
             public void handle(long frameTime) {
-                CameraControl.updateCamera();
 
                 //Time difference from last frame
                 deltaTime = 0.00000001 * (frameTime - lastUpdate);
@@ -71,6 +70,7 @@ public class Main extends Application {
                         updateTick();
                     lastUpdate = frameTime;
                 }
+                CameraControl.updateCamera();
             }
         };
         simLoop.start();
@@ -93,7 +93,6 @@ public class Main extends Application {
                 entityList.get(i).update();
 
             collided = false;
-            entityList.get(i).update();
         }
     }
 
@@ -101,13 +100,13 @@ public class Main extends Application {
         WorldRegion world = World.getWorld();
         ArrayList<Integer> toDraw = new ArrayList<>();
 
-        for (int i = 0; i < ((world.getMaxBinRegionId() - world.getMinBinRegionId()) + 1); i++) {
+        /*for (int i = 0; i < ((world.getMaxBinRegionId() - world.getMinBinRegionId()) + 1); i++) {
             if (BinRegionHandler.ghostRegions.get( (world.getMinBinRegionId() + i) ).localToScene(
                     BinRegionHandler.ghostRegions.get( (world.getMinBinRegionId() + i) ).getBoundsInLocal()
             ).intersects(0, 0, initialScene.getWidth(), initialScene.getHeight())
             )
                 toDraw.add(BinRegionHandler.binRegionMap.get( (world.getMinBinRegionId() + i) ).getBinId());
-        }
+        }*/
         if (!toDraw.isEmpty())
             BinRegionHandler.setActiveRegions(toDraw);
     }

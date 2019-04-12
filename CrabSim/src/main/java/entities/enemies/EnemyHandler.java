@@ -26,8 +26,8 @@ public class EnemyHandler {
         World.getWorld().getChildren().add(newLobster);
 
         BinRegion randRegion = BinRegionHandler.getRandomRegion();
-        newLobster.setLayoutX(random.nextInt(randRegion.getMaxX()) + randRegion.getLayoutX());
-        newLobster.setLayoutY(random.nextInt(randRegion.getMaxY()) + randRegion.getLayoutY());
+        newLobster.setTranslateX(random.nextInt(randRegion.getMaxX()) + randRegion.getLayoutX());
+        newLobster.setTranslateY(random.nextInt(randRegion.getMaxY()) + randRegion.getLayoutY());
         EntityHandler.addEntity(newLobster);
     }
 }

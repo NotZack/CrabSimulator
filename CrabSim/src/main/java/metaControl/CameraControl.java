@@ -1,6 +1,5 @@
 package metaControl;
 
-import entities.players.Player;
 import entities.players.PlayerHandler;
 import main.Main;
 import world.World;
@@ -17,8 +16,8 @@ public class CameraControl {
     public static void updateCamera() {
         WorldRegion world = World.getWorld();
 
-        world.setLayoutX(-PlayerHandler.getPlayer(1).getLayoutX() + Main.initialScene.getWidth() / 2.0);
-        world.setLayoutY(-PlayerHandler.getPlayer(1).getLayoutY() + Main.initialScene.getHeight() / 2.0);
+        world.setLayoutX(-PlayerHandler.getPlayer(1).getTranslateX() + Main.initialScene.getWidth() / 2.0);
+        world.setLayoutY(-PlayerHandler.getPlayer(1).getTranslateY() + Main.initialScene.getHeight() / 2.0);
 
         Main.reDraw();
     }

@@ -5,7 +5,7 @@ import javafx.scene.shape.Rectangle;
 public class Lobster extends Enemy {
     @Override
     protected Rectangle getBoundingBox() {
-        return new Rectangle(this.getLayoutX(), this.getLayoutY(),100, 50);
+        return new Rectangle(this.getTranslateX(), this.getTranslateY(),100, 50);
     }
 
     @Override

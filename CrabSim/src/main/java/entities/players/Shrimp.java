@@ -1,17 +1,14 @@
 package entities.players;
 
-import javafx.scene.image.Image;
 import javafx.scene.shape.Rectangle;
+import main.AssetLoading;
 
-class Shrimp extends Player {
+public class Shrimp extends Player {
 
-    Shrimp(Image shrimpSprite) {
-        this.setImage(shrimpSprite);
-    }
-
-    @Override
-    public void init() {
-
+    public Shrimp() {
+        this.setImage(AssetLoading.shrimpSprite);
+        this.setX(0);
+        this.setY(0);
     }
 
     @Override
@@ -20,8 +17,53 @@ class Shrimp extends Player {
     }
 
     @Override
+    public void setRotateLeft() {
+
+    }
+
+    @Override
+    public void setRotateRight() {
+
+    }
+
+    @Override
+    public void setShoot() {
+
+    }
+
+    @Override
+    public void rotateLeft() {
+
+    }
+
+    @Override
+    public void rotateRight() {
+
+    }
+
+    @Override
+    public void stopLeftRotate() {
+
+    }
+
+    @Override
+    public void stopRightRotate() {
+
+    }
+
+    @Override
+    public void shoot() {
+
+    }
+
+    @Override
+    public void stopShoot() {
+
+    }
+
+    @Override
     protected Rectangle getBoundingBox() {
-        return new Rectangle(this.getLayoutX(), this.getLayoutY(),100, 50);
+        return new Rectangle(this.getTranslateX(), this.getTranslateY(),100, 50);
     }
 
     @Override
