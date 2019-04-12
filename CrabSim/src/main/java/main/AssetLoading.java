@@ -10,6 +10,8 @@ public class AssetLoading {
     public static Image crabSprite;
     public static Image shrimpSprite;
 
+    public static Image lobsterSprite;
+
     public static Image defaultWorldTile;
 
     static void init() {
@@ -29,7 +31,12 @@ public class AssetLoading {
     }
 
     private static void loadEnemies() {
-
+        try {
+            lobsterSprite = new Image(new FileInputStream("CrabSim/src/main/resources/Enemies/Lobster.png"),0, 0, true, false);
+        }
+        catch (FileNotFoundException error) {
+            error.printStackTrace();
+        }
     }
 
     private static void loadTiles() {

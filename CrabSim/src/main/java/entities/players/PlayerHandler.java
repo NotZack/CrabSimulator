@@ -1,7 +1,6 @@
 package entities.players;
 
 import entities.EntityHandler;
-import javafx.scene.Node;
 import javafx.scene.image.Image;
 import main.AssetLoading;
 import main.Main;

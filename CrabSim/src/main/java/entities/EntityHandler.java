@@ -1,7 +1,5 @@
 package entities;
 
-import entities.players.Player;
-
 import java.util.ArrayList;
 
 public class EntityHandler {
@@ -12,7 +10,7 @@ public class EntityHandler {
         return allEntities;
     }
 
-    public static void addEntity(Player newPlayer) {
-        allEntities.add(newPlayer);
+    public static void addEntity(Being newEntity) {
+        allEntities.add(newEntity);
     }
 }

@@ -12,7 +12,7 @@ public class BinRegion extends Group {
     }
 
     private void setId(int id) {
-        int binId = id;
+        binId = id;
     }
 
     public void addTile(Tile newTile) {
@@ -21,5 +21,13 @@ public class BinRegion extends Group {
 
     public int getBinId() {
         return binId;
+    }
+
+    public int getMaxX() {
+        return (int) this.getChildren().get(this.getChildren().size() - 1).getLayoutX() + 400;
+    }
+
+    public int getMaxY() {
+        return (int) this.getChildren().get(this.getChildren().size() - 1).getLayoutY() + 400;
     }
 }

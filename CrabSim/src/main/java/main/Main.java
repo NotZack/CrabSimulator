@@ -93,6 +93,7 @@ public class Main extends Application {
                 entityList.get(i).update();
 
             collided = false;
+            entityList.get(i).update();
         }
     }
 
@@ -107,7 +108,6 @@ public class Main extends Application {
             )
                 toDraw.add(BinRegionHandler.binRegionMap.get( (world.getMinBinRegionId() + i) ).getBinId());
         }
-
         if (!toDraw.isEmpty())
             BinRegionHandler.setActiveRegions(toDraw);
     }

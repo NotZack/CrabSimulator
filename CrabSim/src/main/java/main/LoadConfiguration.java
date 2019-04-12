@@ -19,6 +19,9 @@ public class LoadConfiguration {
     private static int worldHRegions;
     private static String basicWorldTile;
 
+    //[Enemies]
+    private static int numOfLobsters;
+
     static void loadConfigurationFile() {
         Ini ini = null;
         try {
@@ -37,6 +40,8 @@ public class LoadConfiguration {
         worldHRegions = Integer.parseInt(ini.get("Overworld", "horizontalRegions"));
         worldVRegions = Integer.parseInt(ini.get("Overworld", "verticalRegions"));
         basicWorldTile = ini.get("Overworld", "basictile");
+
+        numOfLobsters = Integer.parseInt(ini.get("Enemies", "numOfLobsters"));
     }
 
     static boolean isFullscreen() {
@@ -59,7 +64,11 @@ public class LoadConfiguration {
         return binRegionSize;
     }
 
-    public static String getBasicWorldTile() {
+    static String getBasicWorldTile() {
         return basicWorldTile;
+    }
+
+    public static int getNumberOfLobsters() {
+        return numOfLobsters;
     }
 }

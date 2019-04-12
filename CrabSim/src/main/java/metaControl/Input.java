@@ -18,7 +18,7 @@ public class Input {
             //Fullscreens the sim window
             if (keyPressed.equals(KeyCode.F)) Main.initFullScreen();
 
-            if (keyPressed.equals(KeyCode.W)) PlayerHandler.getPlayer(1).relocate(PlayerHandler.getPlayer(1).getLayoutX() + 10, PlayerHandler.getPlayer(1).getLayoutY() + 10);
+            if (keyPressed.equals(KeyCode.W)) PlayerHandler.getPlayer(1).relocate(PlayerHandler.getPlayer(1).getLayoutX() + 20, PlayerHandler.getPlayer(1).getLayoutY() + 20);
             //TODO: Remove debug
             if (keyPressed.equals(KeyCode.O)) {
                 System.out.println("DEBUG");
