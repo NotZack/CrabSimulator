@@ -13,4 +13,8 @@ public class EntityHandler {
     public static void addEntity(Being newEntity) {
         allEntities.add(newEntity);
     }
+
+    public static void markEntityAsDead(Being entityToRemove) {
+        entityToRemove.markedAsDead = true;
+    }
 }

@@ -1,9 +1,8 @@
 package entities.players;
 
 import entities.EntityHandler;
-import javafx.scene.image.Image;
-import main.AssetLoading;
 import main.Main;
+import metaControl.CameraControl;
 import world.World;
 
 import java.util.ArrayList;
@@ -26,11 +25,16 @@ public class PlayerHandler {
 
     public static void createNewPlayer(Player newPlayer) {
         playersList.add(newPlayer);
+        newPlayer.playerId = playersList.size();
         EntityHandler.addEntity(newPlayer);
     }
 
     public static Player getPlayer(int playerNumber) {
-        return playersList.get(playerNumber - 1);
+        for (Player playerToFind : playersList) {
+            if (playerToFind.playerId == playerNumber)
+                return playerToFind;
+        }
+        return null;
     }
 
     public static void clearPlayers() {
@@ -43,5 +47,14 @@ public class PlayerHandler {
 
     public static ArrayList<Player> getPlayersList() {
         return playersList;
+    }
+
+    static void killPlayer(int playerId) {
+        EntityHandler.markEntityAsDead(getPlayer(playerId));
+
+        if (playersList.size() == 1)
+            CameraControl.disableCamera();
+
+        playersList.remove(getPlayer(playerId));
     }
 }

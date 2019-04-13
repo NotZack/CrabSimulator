@@ -10,6 +10,7 @@ import main.Main;
 import menus.MenuHandler;
 import menus.implementations.PlayerSelectionMenu;
 import org.jetbrains.annotations.NotNull;
+import world.World;
 
 public class Input {
 
@@ -37,7 +38,7 @@ public class Input {
 
             //TODO: Remove debug
             if (keyPressed.equals(KeyCode.O)) {
-                System.out.println("DEBUG");
+                //
             }
         });
 

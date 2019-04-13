@@ -1,24 +1,38 @@
 package entities.players;
 
 import entities.Being;
+import javafx.animation.PauseTransition;
+import javafx.animation.RotateTransition;
+import javafx.animation.TranslateTransition;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.input.KeyCode;
 
 public abstract class Player  extends Being {
 
+    public int playerId;
+
     int health;
 
-    int vulnerableFrames = 300;
+    ColorAdjust statusEffect = new ColorAdjust();
+
+    RotateTransition rotateAnimation = null;
+    TranslateTransition movementAnimation = null;
+    PauseTransition vulnerbilityTimer = null;
+
+    int invulnerableSeconds = 1;
     boolean vulnerable = true;
 
     public KeyCode rotateLeftKey;
     public KeyCode shootKey;
     public KeyCode rotateRightKey;
 
-    public boolean rotatingLeft = false;
-    public boolean shooting = false;
-    public boolean rotatingRight = false;
+    boolean rotatingLeft = false;
+    boolean shooting = false;
+    boolean rotatingRight = false;
 
     public abstract void takeDamage(int damageAmount);
+
+    abstract void toggleVulnerability();
 
     public abstract void setRotateLeft();
 
@@ -32,7 +46,13 @@ public abstract class Player  extends Being {
 
     public abstract void stopLeftRotate();
 
+    abstract void moveForward();
+
+    abstract void createMoveForwardAnimation();
+
     public abstract void stopRightRotate();
+
+    public abstract void stopMovement();
 
     public abstract void shoot();
 

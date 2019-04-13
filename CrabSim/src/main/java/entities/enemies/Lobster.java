@@ -3,6 +3,7 @@ package entities.enemies;
 import javafx.scene.shape.Rectangle;
 
 public class Lobster extends Enemy {
+
     @Override
     protected Rectangle getBoundingBox() {
         return new Rectangle(this.getTranslateX(), this.getTranslateY(),100, 50);
@@ -10,7 +11,6 @@ public class Lobster extends Enemy {
 
     @Override
     public void update() {
-
     }
 
     @Override
@@ -20,6 +20,11 @@ public class Lobster extends Enemy {
 
     @Override
     public int getDamageAmount() {
-        return 0;
+        return 100;
+    }
+
+    @Override
+    public void kill() {
+
     }
 }

@@ -70,7 +70,8 @@ public class Main extends Application {
                         updateTick();
                     lastUpdate = frameTime;
                 }
-                CameraControl.updateCamera();
+                if (!CameraControl.disabled)
+                    CameraControl.updateCamera();
             }
         };
         simLoop.start();
@@ -82,6 +83,8 @@ public class Main extends Application {
         ArrayList<Being> entityList = EntityHandler.getEntities();
         //Decides what action each cow should be doing
         for (int i = 0; i < entityList.size(); i++) {
+            if (entityList.get(i).markedAsDead)
+                entityList.get(i).kill();
             for (Being being : entityList) {
                 collided = Collision.checkCollision(entityList.get(i), being);
 
