@@ -12,11 +12,11 @@ public class WorldRegion extends Pane {
         maxBinRegionId = max;
     }
 
-    int getMinBinRegionId() {
+    public int getMinBinRegionId() {
         return minBinRegionId;
     }
 
-    int getMaxBinRegionId() {
+    public int getMaxBinRegionId() {
         return maxBinRegionId;
     }
 }

@@ -2,17 +2,31 @@ package entities.players;
 
 import entities.EntityHandler;
 import javafx.animation.*;
+import javafx.geometry.Point2D;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import main.AssetLoading;
+import main.Main;
 import world.World;
 
 public class Crab extends Player {
 
+    private final static int CRAB_SPEED = 10;
+
     public Crab() {
         this.setImage(AssetLoading.crabSprite);
         this.setEffect(statusEffect);
-        this.health = 100;
+        this.health = 100000;
+        this.reticule = new Circle(5, Color.RED);
+
+        this.translateXProperty().addListener(o -> {
+            Point2D end = this.localToParent(50, -100);
+            reticule.setCenterX(end.getX());
+            reticule.setCenterY(end.getY());
+        });
     }
 
     @Override
@@ -69,58 +83,28 @@ public class Crab extends Player {
 
     @Override
     public void rotateLeft() {
-        if (rotateAnimation == null) {
-            rotateAnimation = new RotateTransition(Duration.millis(1000), this);
-            rotateAnimation.setByAngle(-360);
-            rotateAnimation.setCycleCount(Animation.INDEFINITE);
-            rotateAnimation.setInterpolator(Interpolator.LINEAR);
-            rotateAnimation.play();
-        }
+        this.setRotate((Math.abs((int) this.getRotate()) % 360 <= 1) ? -(Main.deltaTime * CRAB_SPEED) : this.getRotate() - (Main.deltaTime * CRAB_SPEED));
     }
 
     @Override
     public void rotateRight() {
-        if (rotateAnimation == null) {
-            rotateAnimation = new RotateTransition(Duration.millis(1000), this);
-            rotateAnimation.setByAngle(360);
-            rotateAnimation.setCycleCount(Animation.INDEFINITE);
-            rotateAnimation.setInterpolator(Interpolator.LINEAR);
-            rotateAnimation.play();
-        }
-    }
-
-    @Override
-    public void stopLeftRotate() {
-        rotatingLeft = false;
-        if (rotateAnimation != null) {
-            rotateAnimation.stop();
-            rotateAnimation = null;
-        }
+        this.setRotate((Math.abs((int) this.getRotate()) % 360 <= 1) ? (Main.deltaTime * CRAB_SPEED) : this.getRotate() + (Main.deltaTime * CRAB_SPEED));
     }
 
     @Override
     public void stopRightRotate() {
         rotatingRight = false;
-        if (rotateAnimation != null) {
-            rotateAnimation.stop();
-            rotateAnimation = null;
-        }
+    }
+
+    @Override
+    public void stopLeftRotate() {
+        rotatingLeft = false;
     }
 
     @Override
     void moveForward() {
-        if (movementAnimation == null)
-            createMoveForwardAnimation();
-    }
-
-    @Override
-    void createMoveForwardAnimation() {
-        movementAnimation = new TranslateTransition(Duration.millis(1000), this);
-        movementAnimation.setToX(this.getTranslateX() + (500 * Math.cos(this.getRotate())));
-        movementAnimation.setToY(this.getTranslateY() + (500 * Math.sin(this.getRotate())));
-        movementAnimation.setInterpolator(Interpolator.LINEAR);
-        movementAnimation.play();
-        movementAnimation.setOnFinished(event -> createMoveForwardAnimation());
+        this.setTranslateX(this.getTranslateX() + ( ( ((CRAB_SPEED * 5) * Main.deltaTime) * Math.sin(Math.toRadians(-(this.getRotate() - 90))) ) ) );
+        this.setTranslateY(this.getTranslateY() + ( ( ((CRAB_SPEED * 5) * Main.deltaTime) * Math.cos(Math.toRadians(-(this.getRotate() - 90))) ) ) );
     }
 
     @Override
@@ -140,15 +124,14 @@ public class Crab extends Player {
 
     @Override
     public void update() {
-
         if (rotatingLeft)
             rotateLeft();
         if (rotatingRight)
             rotateRight();
         if (shooting)
             shoot();
-
-        moveForward();
+        if (moving)
+            moveForward();
     }
 
     @Override
@@ -164,8 +147,8 @@ public class Crab extends Player {
     @Override
     public void kill() {
         EntityHandler.getEntities().remove(this);
-        stopLeftRotate();
         stopRightRotate();
+        stopLeftRotate();
         stopShoot();
         stopMovement();
         World.getWorld().getChildren().remove(this);
@@ -173,7 +156,6 @@ public class Crab extends Player {
 
     @Override
     public void stopMovement() {
-        if (movementAnimation != null)
-            movementAnimation.stop();
+        moving = false;
     }
 }

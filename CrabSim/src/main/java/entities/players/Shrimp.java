@@ -88,37 +88,20 @@ public class Shrimp extends Player {
 
     @Override
     public void stopLeftRotate() {
-        rotatingLeft = false;
-        if (rotateAnimation != null) {
-            rotateAnimation.stop();
-            rotateAnimation = null;
-        }
+
     }
 
     @Override
     public void stopRightRotate() {
-        rotatingRight = false;
-        if (rotateAnimation != null) {
-            rotateAnimation.stop();
-            rotateAnimation = null;
-        }
+
     }
+
 
     @Override
     void moveForward() {
-        if (movementAnimation == null)
-            createMoveForwardAnimation();
+
     }
 
-    @Override
-    void createMoveForwardAnimation() {
-        movementAnimation = new TranslateTransition(Duration.millis(1000), this);
-        movementAnimation.setToX(this.getTranslateX() + (500 * Math.cos(this.getRotate())));
-        movementAnimation.setToY(this.getTranslateY() + (500 * Math.sin(this.getRotate())));
-        movementAnimation.setInterpolator(Interpolator.LINEAR);
-        movementAnimation.play();
-        movementAnimation.setOnFinished(event -> createMoveForwardAnimation());
-    }
 
     @Override
     public void shoot() {
@@ -161,8 +144,6 @@ public class Shrimp extends Player {
     @Override
     public void kill() {
         EntityHandler.getEntities().remove(this);
-        stopLeftRotate();
-        stopRightRotate();
         stopShoot();
         stopMovement();
         World.getWorld().getChildren().remove(this);

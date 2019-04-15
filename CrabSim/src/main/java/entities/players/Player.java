@@ -6,12 +6,17 @@ import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.input.KeyCode;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 
 public abstract class Player  extends Being {
 
     public int playerId;
 
     int health;
+    double rotate;
+
+    Circle reticule;
 
     ColorAdjust statusEffect = new ColorAdjust();
 
@@ -29,6 +34,7 @@ public abstract class Player  extends Being {
     boolean rotatingLeft = false;
     boolean shooting = false;
     boolean rotatingRight = false;
+    boolean moving = true;
 
     public abstract void takeDamage(int damageAmount);
 
@@ -46,11 +52,9 @@ public abstract class Player  extends Being {
 
     public abstract void stopLeftRotate();
 
-    abstract void moveForward();
-
-    abstract void createMoveForwardAnimation();
-
     public abstract void stopRightRotate();
+
+    abstract void moveForward();
 
     public abstract void stopMovement();
 

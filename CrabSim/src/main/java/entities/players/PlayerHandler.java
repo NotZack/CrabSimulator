@@ -19,7 +19,8 @@ public class PlayerHandler {
         for (Player player : playersList) {
             player.setLayoutX(random.nextInt((int) Main.initialScene.getWidth()));
             player.setLayoutY(random.nextInt((int) Main.initialScene.getHeight()));
-            World.getWorld().getChildren().add(player);
+
+            World.getWorld().getChildren().addAll(player, player.reticule);
         }
     }
 

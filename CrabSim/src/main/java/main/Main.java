@@ -25,11 +25,11 @@ public class Main extends Application {
 
     private static Group root = new Group();
     public static Scene initialScene = new Scene(root, 800, 600, Color.BLACK);
-    private static long simSpeed = 128_666_666L;
+    private static long simSpeed = 20_666_666L;
 
     private static boolean paused;
 
-    private static double deltaTime = 0;
+    public static double deltaTime = 0;
 
     private static Stage primaryStage;
 
@@ -103,13 +103,13 @@ public class Main extends Application {
         WorldRegion world = World.getWorld();
         ArrayList<Integer> toDraw = new ArrayList<>();
 
-        /*for (int i = 0; i < ((world.getMaxBinRegionId() - world.getMinBinRegionId()) + 1); i++) {
+        for (int i = 0; i < ((world.getMaxBinRegionId() - world.getMinBinRegionId()) + 1); i++) {
             if (BinRegionHandler.ghostRegions.get( (world.getMinBinRegionId() + i) ).localToScene(
                     BinRegionHandler.ghostRegions.get( (world.getMinBinRegionId() + i) ).getBoundsInLocal()
             ).intersects(0, 0, initialScene.getWidth(), initialScene.getHeight())
             )
                 toDraw.add(BinRegionHandler.binRegionMap.get( (world.getMinBinRegionId() + i) ).getBinId());
-        }*/
+        }
         if (!toDraw.isEmpty())
             BinRegionHandler.setActiveRegions(toDraw);
     }
