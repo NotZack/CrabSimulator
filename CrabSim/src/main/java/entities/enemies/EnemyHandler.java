@@ -3,9 +3,7 @@ package entities.enemies;
 import entities.EntityHandler;
 import main.AssetLoading;
 import main.LoadConfiguration;
-import world.World;
-import world.regions.BinRegion;
-import world.regions.BinRegionHandler;
+import worldModel.World;
 
 import java.util.Random;
 
@@ -23,11 +21,9 @@ public class EnemyHandler {
         Lobster newLobster = new Lobster();
         newLobster.setImage(AssetLoading.lobsterSprite);
 
-        World.getWorld().getChildren().add(newLobster);
-
-        BinRegion randRegion = BinRegionHandler.getRandomRegion();
-        newLobster.setTranslateX(random.nextInt(randRegion.getMaxX()) + randRegion.getLayoutX());
-        newLobster.setTranslateY(random.nextInt(randRegion.getMaxY()) + randRegion.getLayoutY());
+        newLobster.setTranslateX(random.nextInt(5000));
+        newLobster.setTranslateY(random.nextInt(5000));
         EntityHandler.addEntity(newLobster);
+        World.getWorld().getChildren().add(newLobster);
     }
 }

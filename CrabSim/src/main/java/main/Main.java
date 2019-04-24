@@ -6,8 +6,14 @@ import entities.EntityHandler;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.geometry.Insets;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import entities.enemies.EnemyHandler;
@@ -15,9 +21,9 @@ import entities.players.PlayerHandler;
 import menus.MenuHandler;
 import metaControl.CameraControl;
 import metaControl.Input;
-import world.World;
-import world.regions.BinRegionHandler;
-import world.regions.WorldRegion;
+import splitScreen.SplitScreen;
+import splitScreen.SplitScreenHandler;
+import worldModel.World;
 
 import java.util.ArrayList;
 
@@ -39,10 +45,15 @@ public class Main extends Application {
         EnemyHandler.init();
         PlayerHandler.init();
 
-        Platform.runLater(() ->
-            root.getChildren().add(World.getWorld())
-        );
+        Platform.runLater(() ->  {
+            for (SplitScreen splitScreen : SplitScreenHandler.getAllScreens())
+                root.getChildren().add(splitScreen);
+        });
 
+        System.out.println(SplitScreenHandler.getAllScreens());
+        for (Node ode : root.getChildren()) {
+            System.out.println(ode);
+        }
         simLoop();
     }
 
@@ -70,8 +81,8 @@ public class Main extends Application {
                         updateTick();
                     lastUpdate = frameTime;
                 }
-                if (!CameraControl.disabled)
-                    CameraControl.updateCamera();
+
+                CameraControl.updateAllCameras();
             }
         };
         simLoop.start();
@@ -97,21 +108,6 @@ public class Main extends Application {
 
             collided = false;
         }
-    }
-
-    public static void reDraw() {
-        WorldRegion world = World.getWorld();
-        ArrayList<Integer> toDraw = new ArrayList<>();
-
-        for (int i = 0; i < ((world.getMaxBinRegionId() - world.getMinBinRegionId()) + 1); i++) {
-            if (BinRegionHandler.ghostRegions.get( (world.getMinBinRegionId() + i) ).localToScene(
-                    BinRegionHandler.ghostRegions.get( (world.getMinBinRegionId() + i) ).getBoundsInLocal()
-            ).intersects(0, 0, initialScene.getWidth(), initialScene.getHeight())
-            )
-                toDraw.add(BinRegionHandler.binRegionMap.get( (world.getMinBinRegionId() + i) ).getBinId());
-        }
-        if (!toDraw.isEmpty())
-            BinRegionHandler.setActiveRegions(toDraw);
     }
 
     @Override

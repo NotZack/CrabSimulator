@@ -5,12 +5,10 @@ import javafx.animation.*;
 import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import main.AssetLoading;
 import main.Main;
-import world.World;
 
 public class Crab extends Player {
 
@@ -151,7 +149,6 @@ public class Crab extends Player {
         stopLeftRotate();
         stopShoot();
         stopMovement();
-        World.getWorld().getChildren().remove(this);
     }
 
     @Override

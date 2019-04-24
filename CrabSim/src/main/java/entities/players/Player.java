@@ -7,14 +7,15 @@ import javafx.animation.TranslateTransition;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.input.KeyCode;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
+import splitScreen.SplitScreen;
 
-public abstract class Player  extends Being {
+public abstract class Player extends Being {
+
+    public SplitScreen screen;
 
     public int playerId;
 
     int health;
-    double rotate;
 
     Circle reticule;
 

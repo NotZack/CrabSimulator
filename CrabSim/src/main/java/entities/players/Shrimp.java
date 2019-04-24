@@ -2,10 +2,12 @@ package entities.players;
 
 import entities.EntityHandler;
 import javafx.animation.*;
+import javafx.geometry.Point2D;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import main.AssetLoading;
-import world.World;
 
 public class Shrimp extends Player {
 
@@ -13,6 +15,13 @@ public class Shrimp extends Player {
         this.setImage(AssetLoading.shrimpSprite);
         this.setEffect(statusEffect);
         this.health = 100;
+        this.reticule = new Circle(5, Color.RED);
+
+        this.translateXProperty().addListener(o -> {
+            Point2D end = this.localToParent(50, -100);
+            reticule.setCenterX(end.getX());
+            reticule.setCenterY(end.getY());
+        });
     }
 
     @Override
@@ -146,7 +155,6 @@ public class Shrimp extends Player {
         EntityHandler.getEntities().remove(this);
         stopShoot();
         stopMovement();
-        World.getWorld().getChildren().remove(this);
     }
 
     @Override

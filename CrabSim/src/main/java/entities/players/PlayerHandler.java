@@ -1,9 +1,9 @@
 package entities.players;
 
 import entities.EntityHandler;
-import main.Main;
 import metaControl.CameraControl;
-import world.World;
+import splitScreen.SplitScreenHandler;
+import worldModel.World;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -17,10 +17,15 @@ public class PlayerHandler {
 
     public static void init() {
         for (Player player : playersList) {
-            player.setLayoutX(random.nextInt((int) Main.initialScene.getWidth()));
-            player.setLayoutY(random.nextInt((int) Main.initialScene.getHeight()));
-
             World.getWorld().getChildren().addAll(player, player.reticule);
+
+            new CameraControl(player);
+
+            player.setTranslateX(100);
+            player.setTranslateY(100);
+        }
+        for (Player player : playersList) {
+            SplitScreenHandler.initPlayerScreen(player);
         }
     }
 
@@ -52,9 +57,6 @@ public class PlayerHandler {
 
     static void killPlayer(int playerId) {
         EntityHandler.markEntityAsDead(getPlayer(playerId));
-
-        if (playersList.size() == 1)
-            CameraControl.disableCamera();
 
         playersList.remove(getPlayer(playerId));
     }

@@ -1,9 +1,9 @@
 package entities;
 
-import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
+import worldModel.EntityModel;
 
-public abstract class Being extends ImageView {
+public abstract class Being extends EntityModel {
 
     public boolean markedAsDead = false;
 
