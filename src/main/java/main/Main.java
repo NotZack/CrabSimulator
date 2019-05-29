@@ -6,14 +6,8 @@ import entities.EntityHandler;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.geometry.Insets;
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import entities.enemies.EnemyHandler;
@@ -27,18 +21,27 @@ import worldModel.World;
 
 import java.util.ArrayList;
 
+/**
+ * Sets up JavaFX and runs the main game loop.
+ */
 public class Main extends Application {
+
+    private static Stage primaryStage;
 
     private static Group root = new Group();
     public static Scene initialScene = new Scene(root, 800, 600, Color.BLACK);
+
+    //Part of the main loop frame speed calculation
     private static long simSpeed = 20_666_666L;
 
     private static boolean paused;
 
+    //The time in between frames used to smooth out movement
     public static double deltaTime = 0;
 
-    private static Stage primaryStage;
-
+    /**
+     * Initializes world objects and starts the main loop.
+     */
     public static void simInit() {
         Input.enableInput(initialScene);
         World.init();
@@ -49,21 +52,21 @@ public class Main extends Application {
             for (SplitScreen splitScreen : SplitScreenHandler.getAllScreens())
                 root.getChildren().add(splitScreen);
         });
-
-        System.out.println(SplitScreenHandler.getAllScreens());
-        for (Node ode : root.getChildren()) {
-            System.out.println(ode);
-        }
         simLoop();
     }
 
+    /**
+     * Makes the application fullscreen
+     */
     public static void initFullScreen() {
         primaryStage.setFullScreen(true);
     }
 
+    /**
+     * Calls update methods periodically dependant on time between frames and the simSpeed.
+     */
     private static void simLoop() {
-        //timer runs constantly
-        //Time difference from last frame
+
         AnimationTimer simLoop = new AnimationTimer() {
             private long lastUpdate = 0;
 
@@ -88,6 +91,9 @@ public class Main extends Application {
         simLoop.start();
     }
 
+    /**
+     * Checks and updates every entity for collision.
+     */
     private static void updateTick() {
         boolean collided = false;
 
@@ -110,6 +116,10 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Sets up the application, gathering and placing all resources needed.
+     * @param primaryStage The stage (window) of the JavaFX application
+     */
     @Override
     public void start(Stage primaryStage) {
         Main.primaryStage = primaryStage;
@@ -127,6 +137,10 @@ public class Main extends Application {
         root.getChildren().add(MenuHandler.startTitleMenu());
     }
 
+    /**
+     * Starts everything
+     * @param args Environment variables
+     */
     public static void main(String[] args) {
         launch(args);
     }

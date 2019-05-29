@@ -25,7 +25,7 @@ public class LoadConfiguration {
     static void loadConfigurationFile() {
         Ini ini = null;
         try {
-            ini = new Ini(new File("crabSim/src/main/configuration.ini"));
+            ini = new Ini(new File("src/main/configuration.ini"));
         } catch (IOException e) {
             e.printStackTrace();
         }

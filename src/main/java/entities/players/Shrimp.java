@@ -9,6 +9,10 @@ import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import main.AssetLoading;
 
+/**
+ * The Shrimp player moves at a fast rate of 15 and shoots at a fast rate of 15, but does low damage and doesn't turn as
+ * much as other players.
+ */
 public class Shrimp extends Player {
 
     public Shrimp() {
@@ -24,6 +28,9 @@ public class Shrimp extends Player {
         });
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void takeDamage(int damageAmount) {
         health -= damageAmount;
@@ -51,28 +58,43 @@ public class Shrimp extends Player {
         }
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     void toggleVulnerability() {
         vulnerable = !vulnerable;
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void setRotateLeft() {
         rotatingLeft = true;
         rotateLeft();
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void setRotateRight() {
         rotatingRight = true;
         rotateRight();
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void setShoot() {
         shooting = true;
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void rotateLeft() {
         if (rotateAnimation == null) {
@@ -84,6 +106,9 @@ public class Shrimp extends Player {
         }
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void rotateRight() {
         if (rotateAnimation == null) {
@@ -95,38 +120,59 @@ public class Shrimp extends Player {
         }
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void stopLeftRotate() {
 
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void stopRightRotate() {
 
     }
 
 
+    /**
+     * @inheritDoc
+     */
     @Override
     void moveForward() {
 
     }
 
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void shoot() {
 
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void stopShoot() {
 
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     protected Rectangle getBoundingBox() {
         return new Rectangle(this.getLayoutX() + this.getTranslateX(), this.getLayoutY() + this.getTranslateY(), 100, 50);
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void update() {
 
@@ -140,16 +186,25 @@ public class Shrimp extends Player {
         moveForward();
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     protected boolean isVulnerable() {
         return vulnerable;
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
-    public int getDamageAmount() {
+    public int getCollisionDamageAmount() {
         return 0;
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void kill() {
         EntityHandler.getEntities().remove(this);
@@ -157,6 +212,9 @@ public class Shrimp extends Player {
         stopMovement();
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void stopMovement() {
         if (movementAnimation != null)
