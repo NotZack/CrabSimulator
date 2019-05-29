@@ -2,58 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9827ee3-ff42-423f-bb74-0d02ae41b70b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_ini4j_ini4j_0_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_16_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/CrabSim.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/CrabSim.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/CrabSim.test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/configuration.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/entities/Being.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/entities/Collision.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/entities/EntityHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/entities/enemies/Enemy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/entities/enemies/EnemyHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/entities/enemies/Lobster.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/entities/enemies/Pelican.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/entities/players/Crab.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/entities/players/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/entities/players/PlayerHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/entities/players/Shrimp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/main/AssetLoading.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/main/LoadConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/main/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/menus/MenuHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/menus/implementations/PlayerSelectionMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/menus/implementations/TitleMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/metaControl/CameraControl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/metaControl/Input.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/metaControl/KeyAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/splitScreen/SplitScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/splitScreen/SplitScreenHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/worldModel/EntityModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/java/worldModel/World.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/resources/Enemies/Lobster.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/resources/Players/Crab.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/resources/Players/Shrimp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrabSim/src/main/resources/Tiles/FlatTerrain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ambulance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ambulance.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ambulance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bullet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bullet.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bullet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Counter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Counter.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Counter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Crab.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Crab.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Crab.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CrabWorld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CrabWorld.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CrabWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EnemyBullet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EnemyBullet.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EnemyBullet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lobster.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lobster.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lobster.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Loser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Loser.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Loser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pelican.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pelican.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pelican.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.TXT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Worm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Worm.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Worm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Counter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Thumbs.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Wall.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ambulance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/beeper.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/crab.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/granite-light.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/lobster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/pelican.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/sand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/worm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.greenfoot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/eating.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/victory.mp3" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -114,7 +108,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -220,10 +213,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -268,30 +263,30 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Designer" />
-      <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25198728" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Build" weight="0.32936078" />
-      <window_info anchor="bottom" id="Statistic" />
-      <window_info anchor="bottom" id="Messages" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Learn" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Gradle" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="bottom" id="Statistic" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Build" order="11" weight="0.32936078" />
+      <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Gradle" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
     </layout>
   </component>
   <component name="editorHistoryManager">
@@ -421,6 +416,9 @@
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
